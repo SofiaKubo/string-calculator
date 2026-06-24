@@ -16,4 +16,14 @@ public class TokenizerTest {
         assertThat(result)
                 .containsExactly("2", "+", "3");
     }
+
+    @Test
+    void tokenizesMultipleDigitNumbers() {
+        final Tokenizer tokenizer = new Tokenizer();
+
+        final List<String> result = tokenizer.tokenize("222+333");
+
+        assertThat(result)
+                .containsExactly("222", "+", "333");
+    }
 }
